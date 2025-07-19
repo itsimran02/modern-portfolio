@@ -23,7 +23,9 @@ const Nav = (): JSX.Element => {
   >(null);
 
   const spanRefs = useRef<HTMLSpanElement[]>([]);
-  const timelineRef = useRef<gsap.core.Timeline>();
+  const timelineRef = useRef<gsap.core.Timeline | null>(
+    null
+  );
   const borderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
