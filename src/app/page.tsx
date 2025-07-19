@@ -6,8 +6,8 @@ import Nav from "./components/Nav";
 export default function Home() {
   return (
     <div className="">
-      <div className="relative">
-        <div className="absolute top-0 left-0 z-10">
+      <div className="relative overflow-x-clip">
+        <div className="absolute top-0 left-0 -z-10">
           <Image
             src={spotlight}
             alt="alt"
@@ -15,7 +15,7 @@ export default function Home() {
             height={600}
           />
         </div>
-        <div className="absolute top-0 -right-2 z-10 scale-x-[-1]">
+        <div className="absolute top-0 right-[50px] -z-10 scale-x-[-1]">
           <Image
             src={spotlight}
             alt="alt"
