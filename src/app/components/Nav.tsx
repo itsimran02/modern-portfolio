@@ -22,93 +22,93 @@ const Nav = (): JSX.Element => {
     number | null
   >(null);
 
-  const spanRefs = useRef<HTMLSpanElement[]>([]);
-  const timelineRef = useRef<gsap.core.Timeline>();
-  const borderRef = useRef<HTMLDivElement>(null);
+  //   const spanRefs = useRef<HTMLSpanElement[]>([]);
+  //   const timelineRef = useRef<gsap.core.Timeline>();
+  //   const borderRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    timelineRef.current = gsap.timeline();
+  //   useEffect(() => {
+  //     timelineRef.current = gsap.timeline();
 
-    gsap.set(spanRefs.current, {
-      scaleX: 0,
-      opacity: 0,
-      transformOrigin: "left center",
-    });
+  //     gsap.set(spanRefs.current, {
+  //       scaleX: 0,
+  //       opacity: 0,
+  //       transformOrigin: "left center",
+  //     });
 
-    if (borderRef.current) {
-      gsap.set(borderRef.current, {
-        backgroundPosition: "0% 0%",
-      });
+  //     if (borderRef.current) {
+  //       gsap.set(borderRef.current, {
+  //         backgroundPosition: "0% 0%",
+  //       });
 
-      gsap.to(borderRef.current, {
-        backgroundPosition: "200% 0%",
-        duration: 3,
-        ease: "none",
-        repeat: -1,
-      });
-    }
+  //       gsap.to(borderRef.current, {
+  //         backgroundPosition: "200% 0%",
+  //         duration: 3,
+  //         ease: "none",
+  //         repeat: -1,
+  //       });
+  //     }
 
-    return () => {
-      if (timelineRef.current) {
-        timelineRef.current.kill();
-      }
-    };
-  }, []);
+  //     return () => {
+  //       if (timelineRef.current) {
+  //         timelineRef.current.kill();
+  //       }
+  //     };
+  //   }, []);
 
-  useEffect(() => {
-    if (!timelineRef.current) return;
-    timelineRef.current.clear();
+  //   useEffect(() => {
+  //     if (!timelineRef.current) return;
+  //     timelineRef.current.clear();
 
-    spanRefs.current.forEach((span, index) => {
-      if (!span) return;
+  //     spanRefs.current.forEach((span, index) => {
+  //       if (!span) return;
 
-      if (isActive === index || hoveredIndex === index) {
-        timelineRef.current.to(span, {
-          scaleX: 1,
-          opacity: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      } else {
-        timelineRef.current.to(
-          span,
-          {
-            scaleX: 0,
-            opacity: 0,
-            duration: 0.2,
-            ease: "power2.in",
-          },
-          "<"
-        );
-      }
-    });
-  }, [isActive, hoveredIndex]);
+  //       if (isActive === index || hoveredIndex === index) {
+  //         timelineRef.current.to(span, {
+  //           scaleX: 1,
+  //           opacity: 1,
+  //           duration: 0.3,
+  //           ease: "power2.out",
+  //         });
+  //       } else {
+  //         timelineRef.current.to(
+  //           span,
+  //           {
+  //             scaleX: 0,
+  //             opacity: 0,
+  //             duration: 0.2,
+  //             ease: "power2.in",
+  //           },
+  //           "<"
+  //         );
+  //       }
+  //     });
+  //   }, [isActive, hoveredIndex]);
 
-  const handleIsActive = (id: number): void => {
-    setIsActive(id);
-  };
+  //   const handleIsActive = (id: number): void => {
+  //     setIsActive(id);
+  //   };
 
-  const handleMouseEnter = (index: number): void => {
-    setHoveredIndex(index);
-  };
+  //   const handleMouseEnter = (index: number): void => {
+  //     setHoveredIndex(index);
+  //   };
 
-  const handleMouseLeave = (): void => {
-    setHoveredIndex(null);
-  };
+  //   const handleMouseLeave = (): void => {
+  //     setHoveredIndex(null);
+  //   };
 
-  const addSpanRef = (
-    el: HTMLSpanElement | null,
-    index: number
-  ): void => {
-    if (el) {
-      spanRefs.current[index] = el;
-    }
-  };
+  //   const addSpanRef = (
+  //     el: HTMLSpanElement | null,
+  //     index: number
+  //   ): void => {
+  //     if (el) {
+  //       spanRefs.current[index] = el;
+  //     }
+  //   };
 
   return (
     <div className="relative">
       <div
-        ref={borderRef}
+        // ref={borderRef}
         className="absolute inset-0 rounded-[13px] p-[1px]"
         style={{
           background: `linear-gradient(90deg, 
@@ -130,12 +130,12 @@ const Nav = (): JSX.Element => {
             <div
               key={item.name}
               className="flex flex-col justify-center text-center"
-              onMouseEnter={() => handleMouseEnter(i)}
-              onMouseLeave={handleMouseLeave}
+              //   onMouseEnter={() => handleMouseEnter(i)}
+              //   onMouseLeave={handleMouseLeave}
             >
               <a
                 onClick={() => {
-                  handleIsActive(i);
+                  //   handleIsActive(i);
                 }}
                 className={`font-inter md:text-base text-sm font-medium transition-colors duration-300 ${
                   isActive === i
@@ -148,7 +148,7 @@ const Nav = (): JSX.Element => {
               </a>
 
               <span
-                ref={(el) => addSpanRef(el, i)}
+                // ref={(el) => addSpanRef(el, i)}
                 className="h-0.5 bg-white w-full mt-1"
               ></span>
             </div>
