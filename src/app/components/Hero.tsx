@@ -50,8 +50,7 @@ const Hero = () => {
           </span>
         </h1>
         <h2 className="text-[#E4ECFF] font-inter font-normal text-center">
-          Hi! I'm John Doe, a Next.js Developer based in
-          Russia
+          Hi! John Doe, a Next.js Developer based in Russia
         </h2>
         <div className="hover:p-[1px] rounded-[14px] hover:bg-gradient-to-r from-[#CBACF9] to-slate-500">
           <button
