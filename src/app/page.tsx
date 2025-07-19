@@ -15,7 +15,7 @@ export default function Home() {
             height={600}
           />
         </div>
-        <div className="absolute top-0 right-[50px] -z-10 scale-x-[-1]">
+        <div className="absolute top-0 right-[] -z-10 scale-x-[-1]">
           <Image
             src={spotlight}
             alt="alt"

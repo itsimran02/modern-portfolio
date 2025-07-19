@@ -52,27 +52,27 @@ const Nav = (): JSX.Element => {
 
     return () => {
       if (timelineRef.current) {
-        timelineRef.current.kill();
+        timelineRef.current!.kill();
       }
     };
   }, []);
 
   useEffect(() => {
     if (!timelineRef.current) return;
-    timelineRef.current.clear();
+    timelineRef.current!.clear();
 
     spanRefs.current.forEach((span, index) => {
       if (!span) return;
 
       if (isActive === index || hoveredIndex === index) {
-        timelineRef.current.to(span, {
+        timelineRef.current!.to(span, {
           scaleX: 1,
           opacity: 1,
           duration: 0.3,
           ease: "power2.out",
         });
       } else {
-        timelineRef.current.to(
+        timelineRef.current!.to(
           span,
           {
             scaleX: 0,
