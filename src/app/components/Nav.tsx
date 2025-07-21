@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect, JSX } from "react";
 import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 interface NavItem {
   name: string;
@@ -15,6 +16,7 @@ const navItems: NavItem[] = [
 ];
 
 const Nav = (): JSX.Element => {
+  gsap.registerPlugin(useGSAP);
   const [isActive, setIsActive] = useState<number | null>(
     null
   );
@@ -28,7 +30,7 @@ const Nav = (): JSX.Element => {
   );
   const borderRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     timelineRef.current = gsap.timeline();
 
     gsap.set(spanRefs.current, {

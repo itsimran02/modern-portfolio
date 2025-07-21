@@ -1,16 +1,49 @@
 "use client";
 import { ArrowRight } from "lucide-react";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
 
 const Hero = () => {
+  gsap.registerPlugin(useGSAP);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
+  const headingRef = useRef<HTMLHeadingElement>(null);
+
+  useGSAP(() => {
+    if (headingRef.current) {
+      const splitText = new SplitText(headingRef.current, {
+        type: "chars,words",
+        charsClass: "char",
+        wordsClass: "word",
+      });
+
+      gsap.from(splitText.chars, {
+        opacity: 0,
+        y: 50,
+        filter: "blur(20px)",
+        rotationX: -90,
+        duration: 1,
+        ease: "back.out(1.7)",
+        stagger: 0.02,
+      });
+    }
+  }, []);
+
+  useGSAP(() => {
     if (buttonRef.current) {
       gsap.set(buttonRef.current, {
         backgroundImage:
           "linear-gradient(90deg, #161A31 3.4%, #06091F 100%)",
+      });
+
+      gsap.from(buttonRef.current, {
+        opacity: 0,
+        y: 100,
+        filter: "blur(20px)",
+        duration: 2,
+        ease: "back.out",
       });
     }
   }, []);
@@ -43,7 +76,10 @@ const Hero = () => {
         <p className="font-inter font-normal text-[#E4ECFF] md:text-base text-[12px] uppercase tracking-[4px] text-center">
           Dynamic Web Magic with Next.js
         </p>
-        <h1 className="font-bold xl:text-[72px] text-[48px] -tracking-[3.6px] lg:leading-[72px] leading-[48px] text-center">
+        <h1
+          ref={headingRef}
+          className="font-bold xl:text-[72px] text-[48px] -tracking-[3.6px] lg:leading-[72px] leading-[48px] text-center"
+        >
           Transforming Concepts into Seamless{" "}
           <span className="text-[#CBACF9]">
             User Experiences
