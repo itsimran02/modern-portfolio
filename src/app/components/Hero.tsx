@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
+import Spline from "@splinetool/react-spline";
 
 const Hero = () => {
   gsap.registerPlugin(useGSAP);
@@ -72,6 +73,7 @@ const Hero = () => {
 
   return (
     <div>
+      {/* main code  */}
       <div className="flex flex-col justify-center items-center gap-6 lg:py-32 py-16">
         <p className="font-inter font-normal text-[#E4ECFF] md:text-base text-[12px] uppercase tracking-[4px] text-center">
           Dynamic Web Magic with Next.js

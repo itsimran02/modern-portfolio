@@ -2,6 +2,7 @@ import Image from "next/image";
 import { spotlight } from "./assets";
 import Hero from "./components/Hero";
 import Nav from "./components/Nav";
+import About from "./components/About";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
         <div className="relative max-w-[1200px] px-4 lg:px-5 mx-auto">
           <Nav />
           <Hero />
+          <About />
         </div>
       </div>
     </div>
