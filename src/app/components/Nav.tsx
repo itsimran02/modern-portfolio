@@ -125,7 +125,7 @@ const Nav = (): JSX.Element => {
           backgroundSize: "200% 100%",
         }}
       >
-        <div className="w-full h-full bg-[linear-gradient(103deg,_#04071D_16.66%,_#0C0E23_81.61%)] rounded-[12px]" />
+        <div className="w-full h-full bg-[linear-gradient(103deg,_#04071D_16.66%,_#0C0E23_81.61%)] bg-opacity-0 transition-opacity duration-300 opacity-100 rounded-[12px]" />
       </div>
 
       <nav className=" flex justify-center items-center py-6 px-12 w-full lg:w-2/3 mx-auto sticky mt-12 rounded-[13px]">

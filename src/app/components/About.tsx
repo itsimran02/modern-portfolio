@@ -2,7 +2,6 @@
 
 import Spline from "@splinetool/react-spline";
 import SkillCards from "./ui/SkillCards";
-import Image from "next/image";
 
 const About = () => {
   const skillData1 = ["html", "css", "react", "js"];
@@ -74,7 +73,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="mt-7 md:grid md:grid-cols-3 grid-rows-2 w-full gap-4 h-[400px]">
+      {/* <div className="mt-7 md:grid md:grid-cols-3 grid-rows-2 w-full gap-4 h-[400px]">
         <div
           className=" flex-col col-span-1 row-span-1  rounded-xl flex overflow-clip items-center border relative border-[rgba(54,55,73,0.43)]"
           style={{
@@ -108,7 +107,7 @@ const About = () => {
             <img src="/about-gradient.png" />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
