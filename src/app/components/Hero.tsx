@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
-import Spline from "@splinetool/react-spline";
+// import Spline from "@splinetool/react-spline";
 
 const Hero = () => {
   gsap.registerPlugin(useGSAP);
@@ -23,7 +23,7 @@ const Hero = () => {
       gsap.from(splitText.chars, {
         opacity: 0,
         y: 50,
-        filter: "blur(20px)",
+        // filter: "blur(20px)",
         rotationX: -90,
         duration: 1,
         ease: "back.out(1.7)",
