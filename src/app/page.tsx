@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import About from "./components/About";
 
 import Project from "./components/Project";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -34,12 +35,13 @@ export default function Home() {
           />
         </div>
         <div className="relative max-w-[1200px] px-4 lg:px-5 mx-auto">
-          <div className="sticky top-0 left-0  z-10  bg-opacity-20 backdrop-blur-md">
+          <div className="sticky lg:top-6 top-4 left-0  z-10  bg-opacity-20 backdrop-blur-md">
             <Nav />
           </div>
           <Hero />
           <About />
           <Project />
+          <Footer />
         </div>
       </div>
     </div>

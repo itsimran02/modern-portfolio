@@ -10,9 +10,9 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "Contact", href: "#contact" },
+  { name: "Projects", href: "#work" },
+  // { name: "Testimonials", href: "#testimonials" },
+  { name: "Contact", href: "#footer" },
 ];
 
 const Nav = (): JSX.Element => {

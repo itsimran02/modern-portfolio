@@ -14,7 +14,10 @@ const About = () => {
   ];
   return (
     <div>
-      <div className="grid grid-cols-1 grid-rows-1 md:grid-cols-2 md:grid-rows-2   md:h-[541px] gap-7">
+      <div
+        className="grid grid-cols-1 grid-rows-1 md:grid-cols-2 md:grid-rows-2   md:h-[541px] gap-7"
+        id="aboout"
+      >
         <div
           style={{
             background: "url(/laptop.png)",

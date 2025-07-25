@@ -1,9 +1,9 @@
 const Project = () => {
   return (
-    <div className="lg:mt-28 mt-14 ">
+    <div className="lg:mt-28 mt-14 " id="work">
       <div>
         <h2 className="font-inter lg:text-5xl text-4xl   text-center  font-bold ">
-          my{" "}
+          My{" "}
           <span className="text-[#CBACF9]">projects</span>
         </h2>
         <div className="flex lg:flex-row flex-col gap-7 lg:gap-10 mt-6 lg:mt-12">
