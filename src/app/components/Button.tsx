@@ -1,9 +1,11 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ArrowRight } from "lucide-react";
-import { useRef } from "react";
-
-const Button = ({ children }) => {
+import { ReactNode, useRef } from "react";
+type ButtonProps = {
+  children: ReactNode;
+};
+const Button = ({ children }: ButtonProps) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   useGSAP(() => {
     if (buttonRef.current) {
